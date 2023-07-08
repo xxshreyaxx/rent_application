@@ -1,0 +1,62 @@
+CREATE OR REPLACE PROCEDURE insertpropertyrecord(
+  pid1 IN NUMBER,
+  owner1 IN NUMBER,
+  startdate1 IN NUMBER,
+  endate1 IN NUMBER,
+  rent1 IN NUMBER,
+  hike1 IN NUMBER,
+  total_area1 IN NUMBER,
+  plith_area1 IN NUMBER,
+  floor_no1 IN NUMBER,
+  year_no IN NUMBER,
+  locality1 IN VARCHAR2,
+  add_doorno1 IN NUMBER,
+  street1 IN VARCHAR2,
+  add_pincode1 IN NUMBER,
+  city1 IN VARCHAR2,
+  state1 IN VARCHAR2,
+  prop1 IN VARCHAR2,
+  other1 IN VARCHAR2
+) IS
+BEGIN
+  INSERT INTO property(
+    pid,
+    owner_id,
+    start_date,
+    end_date,
+    rentpm,
+    hike,
+    total_area,
+    plinth_area,
+    no_floors,
+    year_constr,
+    locality,
+    door_no,
+    street,
+    pincode,
+    city,
+    state,
+    prop_type,
+    other
+  ) VALUES (
+    pid1,
+    owner1,
+    TO_DATE(startdate1, 'YYYYMMDD'),
+    TO_DATE(endate1, 'YYYYMMDD'),
+    rent1,
+    hike1,
+    total_area1,
+    plith_area1,
+    floor_no1,
+    year_no,
+    locality1,
+    add_doorno1,
+    street1,
+    add_pincode1,
+    city1,
+    state1,
+    prop1,
+    other1
+  );
+END;
+/
