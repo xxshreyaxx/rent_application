@@ -1,0 +1,3 @@
+CREATE OR REPLACE PROCEDURE getrenthistory(
+  pid1 IN NUMBER
+)
